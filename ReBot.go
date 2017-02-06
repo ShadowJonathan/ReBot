@@ -166,7 +166,7 @@ func HandleCase(RB string, CFG []byte) {
 					yus, err := strconv.ParseBool(val)
 					if err == nil {
 						if yus {
-							Launch(RB, A.run)
+							go Launch(RB, A.run)
 						}
 					}
 				}
