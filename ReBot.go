@@ -84,7 +84,7 @@ func RunAuto() {
 	}
 	dg.AddHandler(Ready)
 	dg.AddHandler(CM)
-	BOTS := strings.Split(string(BotsB), "+")
+	BOTS := strings.Split(string(BotsB), "\n")
 	if len(BOTS) == 0 {
 		return
 	}
@@ -132,7 +132,8 @@ func Launch(Bot string, subcmd string) {
 	}()
 	err = CMD.Run()
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		return
 	}
 	returnedbot <- Bot
 }
